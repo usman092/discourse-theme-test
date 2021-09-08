@@ -2,7 +2,7 @@ AvenirNextLTPro-Regular:
   default: "assets/AvenirNextLTProRegular.otf"
 
 global-button-border-radius:
-  default: 30px
+  default: "30px"
 
 editor-button-text:
   default: "#FF0000"
