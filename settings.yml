@@ -5,10 +5,10 @@ global-button-border-radius:
   default: "30px"
 
 editor-button-text:
-  default: "#FF0000"
+  default: ""
 
 editor-button-text-hover:
-  default: "#FF0000"
+  default: ""
 
 basic-button-bg:
   default: "white"
