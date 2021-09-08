@@ -1,10 +1,16 @@
 <script type="text/discourse-plugin" version="0.8">
   const urlQueryParams = new URLSearchParams(window.location.href);
   console.log("UMSNA", window.location.href);
+  console.log(urlQueryParams.get('openEditor'));
+  console.log(urlQueryParams.get('courseTag'));
+
   if (urlQueryParams.get('openEditor') === 'true') {
       const courseTag = urlQueryParams.get('courseTag');
       const urlParts = window.location.href.split('/');
       const lessonTag = urlParts[urlParts.length-1].split('?')[0];
+
+      console.log(urlParts);
+      console.log(lessonTag);
 
       if (lessonTag && courseTag){
           api.modifyClass("model:composer", {
