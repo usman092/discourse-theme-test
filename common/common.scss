@@ -1,0 +1,628 @@
+@font-face {
+  font-family: Avenir;
+  src: url($AvenirNextLTPro-Regular) format("otf");
+}
+
+body {
+  font-family: Avenir;
+}
+
+$global-button-border-radius: 0 !default;
+
+// Basic Button
+
+$basic-button-bg: null !default;
+$basic-button-text: null !default;
+
+$basic-button-bg-hover: null !default;
+$basic-button-text-hover: null !default;
+
+// Primary Button
+
+$primary-button-bg: null !default;
+$primary-button-text: null !default;
+
+$primary-button-bg-hover: null !default;
+$primary-button-text-hover: null !default;
+
+// Header nav
+
+$header-text: null !default;
+$header-bg: null !default;
+
+$header-text-hover: null !default;
+$header-bg-hover: null !default;
+
+// Nav pills
+
+$nav-pill-bg: null !default;
+$nav-pill-text: null !default;
+
+$nav-pill-bg-hover: null !default;
+$nav-pill-text-hover: null !default;
+
+$nav-pill-bg-active: null !default;
+$nav-pill-text-active: null !default;
+
+// Editor buttons
+
+$editor-button-bg: null !default;
+$editor-button-color: null !default;
+
+$editor-button-bg-hover: null !default;
+$editor-button-color-hover: null !default;
+
+// Post controls
+
+$post-controls-bg: null !default;
+$post-controls-text: null !default;
+
+$post-controls-bg-hover: null !default;
+$post-controls-text-hover: null !default;
+
+// Post controls like button
+
+$like-button-bg: $post-controls-bg !default;
+$like-button-text: $post-controls-text !default;
+
+$like-button-bg-hover: $post-controls-bg-hover !default;
+$like-button-text-hover: $post-controls-text-hover !default;
+$like-button-text-hover-like-count: $post-controls-text-hover !default;
+
+// Combo box header
+
+$combo-box-bg: $basic-button-bg !default;
+$combo-box-text: $basic-button-text !default;
+
+// Overrides
+.btn-flat .d-icon,
+.select-kit .d-icon,
+.select-kit.dropdown-select-box.toolbar-popup-menu-options
+  .select-kit-row
+  .d-icon {
+  opacity: 1;
+}
+
+// Basic Button
+
+.btn {
+  background: $basic-button-bg;
+  color: $basic-button-text;
+  border-radius: $global-button-border-radius;
+  &[href],
+  .d-icon-thumb-tack {
+    color: $basic-button-text;
+  }
+  i.d-icon {
+    opacity: 1;
+  }
+  .d-icon.d-icon-d-regular,
+  .d-icon.d-icon-d-muted,
+  .d-icon.d-icon-d-watching-first,
+  .d-icon.d-icon-d-watching-first-post {
+    color: $basic-button-text;
+  }
+  .d-icon.d-icon-d-tracking,
+  .d-icon.d-icon-d-watching {
+    color: $basic-button-text;
+  }
+  &:hover {
+    background: $basic-button-bg-hover;
+    color: $basic-button-text-hover;
+
+    &[href],
+    .d-icon-thumb-tack {
+      color: $basic-button-text-hover;
+    }
+  }
+  &.btn-primary {
+    background: $primary-button-bg;
+    color: $primary-button-text;
+    border-radius: $global-button-border-radius;
+
+    &:hover {
+      background: $primary-button-bg-hover;
+      color: $primary-button-text-hover;
+    }
+  }
+}
+
+.btn[disabled],
+.btn.disabled {
+  background: $basic-button-bg !important;
+  color: $basic-button-text !important;
+  border-radius: $global-button-border-radius !important;
+  opacity: 0.25;
+}
+
+.search-container .search-advanced-sidebar .search-advanced-title.btn {
+  background: $basic-button-bg;
+  color: $basic-button-text;
+}
+
+// Various edge cases
+
+.select-kit.dropdown-select-box.toolbar-popup-menu-options .select-kit-row,
+.select-kit.dropdown-select-box.toolbar-popup-menu-options
+  .select-kit-row.is-selected,
+.select-kit.dropdown-select-box.toolbar-popup-menu-options
+  .select-kit-row.is-highlighted,
+.select-kit.dropdown-select-box.toolbar-popup-menu-options
+  .select-kit-row.is-selected.is-highlighted {
+  background: $basic-button-bg;
+  border-radius: $global-button-border-radius;
+
+  .name,
+  .d-icon {
+    color: $basic-button-text;
+  }
+  &:hover {
+    background: $basic-button-bg-hover;
+
+    .name,
+    .d-icon {
+      color: $basic-button-text-hover;
+    }
+  }
+}
+
+.topic-map .btn {
+  border-radius: 0;
+}
+
+.list-controls
+  .select-kit.dropdown-select-box
+  .dropdown-select-box-header:hover {
+  background: $basic-button-bg-hover;
+}
+.select-kit.dropdown-select-box .dropdown-select-box-header:hover .d-icon {
+  color: $basic-button-text-hover;
+}
+
+.bootbox.modal .modal-footer a.btn-primary {
+  color: $primary-button-text;
+  &:hover {
+    color: $primary-button-text-hover;
+  }
+}
+
+label.btn i {
+  color: $basic-button-text;
+  &:hover {
+    color: $basic-button-text-hover;
+  }
+}
+
+// Header nav
+
+.d-header-icons {
+  .icon {
+    background: $header-bg;
+    color: $header-text;
+  }
+  .icon:hover {
+    background: $header-bg-hover;
+    color: $header-text-hover;
+  }
+  .drop-down-mode & {
+    .active .icon {
+      color: $header-text;
+    }
+  }
+}
+
+// Nav pills
+
+.nav-pills > li > a {
+  background: $nav-pill-bg;
+  color: $nav-pill-text;
+  border-radius: $global-button-border-radius;
+
+  .d-icon {
+    opacity: 1;
+  }
+  &:hover {
+    background: $nav-pill-bg-hover;
+    color: $nav-pill-text-hover;
+  }
+}
+
+.admin-controls .nav.nav-pills li.active a,
+.nav-pills > li.active > a,
+.nav-pills > li > a.active {
+  background: $nav-pill-bg-active;
+  color: $nav-pill-text-active;
+}
+
+// Post controls
+
+.discourse-no-touch .topic-body .actions .fade-out {
+  opacity: 1;
+  transition: background-color 0.25s, color 0.25s;
+}
+
+nav.post-controls a,
+nav.post-controls button,
+nav.post-controls button.create {
+  background: $post-controls-bg;
+  color: $post-controls-text;
+  border-radius: $global-button-border-radius;
+  transition: background-color 0.25s, color 0.25s;
+  &.delete {
+    background: $danger;
+    &:hover {
+      background: $danger;
+      color: $secondary;
+    }
+  }
+  &:hover {
+    background: $post-controls-bg-hover;
+    color: $post-controls-text-hover;
+  }
+}
+nav.post-controls .like-button,
+nav.post-controls .like-button .like-count,
+nav.post-controls .like-button .my-likes {
+  background: $post-controls-bg;
+
+  color: $post-controls-text;
+  margin-right: 5px;
+  border-radius: $global-button-border-radius;
+
+  i.d-icon,
+  .like-count {
+    color: $post-controls-text;
+    background: transparent;
+  }
+  &:hover {
+    background: $like-button-bg-hover;
+    i,
+    .like-count {
+      color: $like-button-text-hover;
+      background: transparent;
+      transition: none;
+    }
+    .like-count.d-hover {
+      color: $like-button-text-hover;
+      text-decoration: underline;
+    }
+  }
+}
+.has-like {
+  margin-left: -2px;
+}
+
+// Combo-box header
+
+.list-controls .combo-box .combo-box-header,
+.list-controls .select-kit.dropdown-select-box .dropdown-select-box-header,
+.mobile-view .list-controls .nav-pills > li > a,
+.mobile-view .mobile-nav {
+  background: $combo-box-bg;
+  color: $combo-box-text;
+  border-radius: $global-button-border-radius;
+
+  i {
+    background: transparent;
+    color: $combo-box-text;
+  }
+  .badge-wrapper.bullet span.badge-category,
+  .badge-wrapper.bar span.badge-category {
+    color: $combo-box-text;
+  }
+}
+.category-breadcrumb {
+  .is-none {
+    background: $combo-box-bg !important;
+    color: $combo-box-text !important;
+
+    i {
+      background: transparent !important;
+      color: $combo-box-text !important;
+    }
+  }
+}
+.period-chooser-header {
+  border-radius: 0;
+}
+
+.mobile-view {
+  .list-controls .nav-pills > li {
+    background: transparent;
+  }
+  .mobile-nav > li > a {
+    background: $combo-box-bg;
+    color: $combo-box-text;
+    border-radius: $global-button-border-radius;
+    .fa {
+      color: $combo-box-text;
+    }
+  }
+}
+
+// Editor buttons
+
+.d-editor-button-bar {
+  button,
+  .select-kit.dropdown-select-box .dropdown-select-box-header {
+    background: $editor-button-bg;
+    color: $editor-button-text;
+    border-radius: $global-button-border-radius;
+    @if $editor-button-bg != "null" {
+      margin-right: 1px;
+    }
+    &:hover {
+      background: $editor-button-bg-hover;
+      color: $editor-button-text-hover;
+    }
+  }
+  .select-kit.dropdown-select-box .dropdown-select-box-header:hover .d-icon {
+    color: $editor-button-text-hover;
+    border-radius: $global-button-border-radius;
+  }
+}
+
+#reply-control .reply-to button i {
+  border-radius: $global-button-border-radius;
+}
+
+// Confirm/deny
+
+button.ok,
+.btn-success {
+  border-radius: $global-button-border-radius;
+  background: $success;
+  color: $secondary;
+  &:hover,
+  &:hover[href] {
+    background: $success;
+    color: $secondary;
+  }
+}
+
+button.cancel,
+.btn-danger {
+  border-radius: $global-button-border-radius;
+  background: $danger;
+  color: $secondary;
+  &:hover,
+  &:hover[href] {
+    background: $danger;
+    color: $secondary;
+  }
+}
+
+// Custom Design
+
+.admin-controls nav {
+  background: white !important;
+}
+
+.nav-pills {
+  background: #f4f4f4 !important;
+  border-radius: 30px !important;
+}
+
+.admin-controls nav:before {
+  content: none;
+}
+
+.admin-controls nav:after {
+  content: none;
+}
+
+.admin-controls {
+  background: white !important;
+}
+
+.admin-customize .nav-pills.fields {
+  margin-left: 0px;
+}
+
+.ace-chrome .ace_gutter {
+  margin-top: 10px;
+}
+
+.alert.alert-info {
+  border-radius: 30px;
+}
+
+.ace_content {
+  border-top: 1px solid #ebebeb;
+}
+
+.topic-list-item {
+  :hover {
+    background: #f7f7f7;
+    transition: 0.2s;
+    border-radius: 10px;
+  }
+}
+
+.badge-wrapper.bullet .badge-category-parent-bg,
+.badge-wrapper.bullet .badge-category-bg {
+  border-radius: 20px;
+}
+
+.d-header-icons .icon:hover,
+.d-header-icons .icon:focus {
+  border-radius: 10px;
+  background-color: #f1f1f1;
+}
+
+.d-editor-textarea-wrapper {
+  border-radius: 15px;
+  border: 1px solid gainsboro;
+}
+
+.select-kit.combo-box .select-kit-header {
+  border-radius: 20px;
+}
+
+.settings .setting.overridden.string input[type="text"],
+.settings .setting.overridden.string input[type="password"],
+.settings .setting.overridden.string textarea {
+  background-color: #f8faff;
+  border-radius: 20px;
+}
+
+.settings .setting .input-setting-string,
+.settings .setting .input-setting-textarea {
+  border-radius: 20px;
+}
+
+.subcategories .subcategory {
+  display: none;
+}
+
+.category-box-inner {
+  border-width: 1px !important;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.d-header #site-logo {
+  max-height: 30px;
+  margin-top: 4px;
+}
+
+.docked .d-header {
+  box-shadow: none;
+  border-bottom: 1px solid #dfdfdf;
+}
+
+/*Adding DOW links to top - link text section*/
+span#top-navbar-links {
+  display: block !important;
+  margin: 22px 0 0 0;
+}
+
+/*Start dropping DOW Menu links & shortening title on small windows*/
+
+.extra-info-wrapper .topic-link {
+  max-width: 600px;
+}
+
+@media (min-width: 1150px) {
+  .extra-info-wrapper .topic-link {
+    max-width: 600px;
+    padding-right: 250px;
+  }
+}
+
+@media (max-width: 1149px) {
+  div.title-wrapper {
+    padding-right: 280px;
+  }
+}
+
+@media (min-width: 999px) {
+  /*Adding DOW links to top - link container */
+  div#top-navbar {
+    max-width: none; /*remove max width*/
+    width: auto; /*prevent other widths taking over*/
+    z-index: 1040; /*stays on top of other header*/
+    /*position:relative;
+        float:left;*/
+    position: fixed;
+    top: 0;
+    left: 47%;
+  }
+}
+
+@media (max-width: 998px) {
+  /*jumpover point, attach to right side*/
+
+  div.title-wrapper {
+    padding-right: 220px;
+  }
+
+  /*Adding DOW links to top - link text section*/
+  span#top-navbar-links {
+    position: fixed;
+    top: 0;
+    margin: 22px 0px 0px 0px;
+  }
+
+  div#top-navbar {
+    max-width: none; /*remove max width*/
+    width: auto; /*prevent other widths taking over*/
+    z-index: 1040; /*stays on top of other header*/
+    /*position:relative;
+        float:left;*/
+    position: fixed;
+    top: 0;
+    left: 47%;
+  }
+}
+
+@media (max-width: 900px) {
+  /*jumpover point*/
+  /*div#top-navbar {
+    left: 50%;
+}*/
+  div.title-wrapper {
+    padding-right: 220px;
+  }
+}
+
+@media (max-width: 725px) {
+  a.dow-menu#library {
+    display: none;
+  }
+  div.title-wrapper {
+    padding-right: 135px;
+  }
+  span#top-navbar-links {
+    margin-left: -20px;
+  }
+}
+
+@media (min-width: 571px) {
+  i.fa.fa-home:before {
+    display: none;
+  }
+}
+
+@media (max-width: 570px) {
+  a.dow-menu#store {
+    display: none;
+  }
+  span#top-navbar-links {
+    margin: 19px 0 0 -220px;
+  }
+
+  i.fa.fa-home:before {
+    display: initial !important;
+    color: #fff;
+    font-size: 30px;
+  }
+
+  span#educative-link {
+    display: none;
+  }
+
+  div.title-wrapper {
+    padding-right: 50px;
+  }
+  .extra-info-wrapper {
+    display: block;
+  }
+}
+
+@media (max-width: 455px) {
+  .extra-info-wrapper {
+    display: none;
+  }
+}
+
+/*Individual links*/
+a.dow-menu {
+  font-size: 14px;
+  padding: 0 13px;
+  color: grey;
+  transition: 0.2s;
+  :hover {
+    color: #4b49ff;
+  }
+}
