@@ -12,6 +12,7 @@
               open(opts) {
                 if (!opts) opts = {};
                 const categoryObj = this.site.categories.findBy("name", "Courses");
+                console.log(categoryObj);
                 const id = categoryObj ? categoryObj.id : 0;
                 if (!opts.categoryId) {
                   opts.categoryId = id;
