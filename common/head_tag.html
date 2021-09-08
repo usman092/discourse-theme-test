@@ -22,7 +22,7 @@
     return retVal;
   }
 
-  const {openEditor, courseTag, lessonTag} = getQueryParamsForComposer(document.documentURI ?? window.location.href);
+  const {openEditor, courseTag, lessonTag} = getQueryParamsForComposer(null ?? window.location.href);
   if (openEditor && lessonTag && courseTag){
       api.modifyClass("model:composer", {
         open(opts) {
