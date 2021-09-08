@@ -11,8 +11,11 @@
             api.modifyClass("model:composer", {
               open(opts) {
                 if (!opts) opts = {};
-                const categoryObj = this.site.categories.findBy("name", "Courses");
-                console.log(categoryObj);
+                let categoryObj = this.site.categories.findBy("name", "Courses");
+                if (!categoryObj) {
+                  // This is to fill category when testing on staging.
+                  categoryObj = this.site.categories.findBy("name", "COURSES");
+                }
                 const id = categoryObj ? categoryObj.id : 0;
                 if (!opts.categoryId) {
                   opts.categoryId = id;
