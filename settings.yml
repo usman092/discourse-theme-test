@@ -1,0 +1,41 @@
+AvenirNextLTPro-Regular:
+  default: "assets/AvenirNextLTProRegular.otf"
+
+global-button-border-radius:
+  default: 30px
+
+editor-button-text:
+  default: "#FF0000"
+
+editor-button-text-hover:
+  default: "#FF0000"
+
+basic-button-bg:
+  default: "white"
+
+basic-button-bg-hover:
+  default: "#f4f4f4"
+
+basic-button-text-hover:
+  default: "black"
+
+primary-button-bg:
+  default: "#4B49FF"
+
+primary-button-text-hover:
+  default: "white"
+
+header-text:
+  default: "black"
+
+nav-pill-text-hover:
+  default: "#4B49FF"
+
+nav-pill-bg-hover:
+  default: "#f4f4f4"
+
+nav-pill-bg-active:
+  default: "#4B49FF"
+
+nav-pill-text-active:
+  default: "white"

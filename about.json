@@ -1,0 +1,18 @@
+{
+  "name": "Educative Discourse Theme",
+  "about_url": "https://github.com/educative/discourse-educative/blob/master/README.md",
+  "color_schemes": {
+    "Educative": {
+      "primary": "222222",
+      "secondary": "ffffff",
+      "tertiary": "8173ff",
+      "quaternary": "3e15ff",
+      "header_background": "ffffff",
+      "header_primary": "171632",
+      "highlight": "e3e6ff",
+      "danger": "ff0058",
+      "success": "4ed300",
+      "love": "00c6ff"
+    }
+  }
+}
