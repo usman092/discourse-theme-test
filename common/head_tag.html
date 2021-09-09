@@ -27,7 +27,7 @@
 
   const {openEditor, courseTag, lessonTag} = getQueryParamsForComposer(document?.documentURI ?? window?.location?.href);
   console.log(document.documentURI);
-  if (openEditor && lessonTag && courseTag){
+  if (false && openEditor && lessonTag && courseTag){
     api.modifyClass("model:composer", {
       open(opts) {
         if (!opts) opts = {};
