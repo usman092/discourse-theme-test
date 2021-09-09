@@ -32,6 +32,7 @@ export default {
 
       const {openEditor, courseTag, lessonTag} = getQueryParamsForComposer(document?.documentURI ?? window?.location?.href);
       if (openEditor && lessonTag && courseTag){
+        console.log("blah blah");
         api.modifyClass("model:composer", {
           open(opts) {
             if (!opts) opts = {};
