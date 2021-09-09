@@ -1,6 +1,6 @@
 import { withPluginApi } from "discourse/lib/plugin-api";
 
-getQueryParamsForComposer = (url) => {
+const getQueryParamsForComposer = (url) => {
   const retVal = { openEditor: false };
   if (!url) {
     return retVal;
@@ -26,7 +26,7 @@ getQueryParamsForComposer = (url) => {
   return retVal;
 }
 
-initializeCreateTopic = (api) => {
+const initializeCreateTopic = (api) => {
   const { openEditor, courseTag, lessonTag } = getQueryParamsForComposer(
     document?.documentURI ?? window?.location?.href
   );
