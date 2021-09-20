@@ -8,7 +8,7 @@ const getQueryParamsForComposer = (url) => {
   const splitUrl = url.split("?");
   if (splitUrl.length > 1) {
     const urlQueryParams = new URLSearchParams(splitUrl[splitUrl.length - 1]);
-    if (urlQueryParams.get("openEditor").toLowerCase() === "true") {
+    if (urlQueryParams.get("openEditor")?.toLowerCase() === "true") {
       retVal.openEditor = true;
       const courseTag = urlQueryParams.get("courseTag");
       if (courseTag) {
