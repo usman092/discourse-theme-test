@@ -1,16 +1,16 @@
 import { withPluginApi } from "discourse/lib/plugin-api";
 
 const getComposerContent = (urlQueryParams) => {
-  const educativeUrl = 'https://educative.io/collection/';
+  const educativeUrl = 'https://educative.io/collection';
   const authorId = urlQueryParams.get('authorId');
   const collectionId = urlQueryParams.get('collectionId');
   const pageId = urlQueryParams.get('pageId');
   let content = '';
 
   if (authorId && collectionId) {
-    content = `\n\n\n-------------------- Type question above this line.\n[CourseLink](${educativeUrl}/collection/${authorId}/${collectionId})\n`;
+    content = `\n\n\n-------------------- Type question above this line.\n[CourseLink](${educativeUrl}/${authorId}/${collectionId})\n`;
     if (pageId) {
-      content = `${content}[LessonLink](${educativeUrl}/collection/page/${authorId}/${collectionId}/${pageId})\n`;
+      content = `${content}[LessonLink](${educativeUrl}/page/${authorId}/${collectionId}/${pageId})\n`;
     }
   }
   return content;
