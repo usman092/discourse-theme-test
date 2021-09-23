@@ -34,7 +34,9 @@ const getQueryParamsForComposer = (url) => {
       if (urlParts && urlParts.length > 0) {
         retVal.lessonTag = urlParts[urlParts.length - 1];
       }
+      console.log("getting composer content");
       retVal.content = getComposerContent(urlQueryParams);
+      console.log("content is ", retVal.content);
     }
   }
 
