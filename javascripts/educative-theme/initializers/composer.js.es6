@@ -1,5 +1,21 @@
 import { withPluginApi } from "discourse/lib/plugin-api";
 
+const getComposerContent = (urlQueryParams) => {
+  const educativeUrl = 'https://educative.io/collection/';
+  const authorId = urlQueryParams.get('authorId');
+  const collectionId = urlQueryParams.get('collectionId');
+  const pageId = urlQueryParams.get('pageId');
+  let content = '';
+
+  if (authorId && collectionId) {
+    content = `\n\n\n\n[CourseLink](${educativeUrl}/collection/${authorId}/${collectionId})\n`;
+    if (pageId) {
+      content = `${content}[LessonLink](${educativeUrl}/collection/page/${authorId}/${collectionId}/${pageId})\n`;
+    }
+  }
+  return content;
+}
+
 const getQueryParamsForComposer = (url) => {
   const retVal = { openEditor: false };
   if (!url) {
@@ -18,6 +34,7 @@ const getQueryParamsForComposer = (url) => {
       if (urlParts && urlParts.length > 0) {
         retVal.lessonTag = urlParts[urlParts.length - 1];
       }
+      retVal.content = getComposerContent(urlQueryParams);
     }
   }
 
@@ -27,9 +44,8 @@ const getQueryParamsForComposer = (url) => {
 }
 
 const initializeCreateTopic = (api) => {
-  const { openEditor, courseTag, lessonTag } = getQueryParamsForComposer(
-    document?.documentURI ?? window?.location?.href
-  );
+  const uri = document?.documentURI ?? window?.location?.href;
+  const { openEditor, courseTag, lessonTag, content } = getQueryParamsForComposer(uri);
   if (openEditor && lessonTag && courseTag) {
     api.modifyClass("model:composer", {
       open(opts) {
@@ -55,6 +71,7 @@ const initializeCreateTopic = (api) => {
           action: Composer.CREATE_TOPIC,
           draftKey: Composer.DRAFT,
           topicTags: [lessonTag, courseTag],
+          topicBody: content,
         });
       }
     }
