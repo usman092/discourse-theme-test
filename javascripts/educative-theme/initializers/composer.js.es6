@@ -47,7 +47,9 @@ const getQueryParamsForComposer = (url) => {
 
 const initializeCreateTopic = (api) => {
   const uri = document?.documentURI ?? window?.location?.href;
+  console.log("Starting");
   const { openEditor, courseTag, lessonTag, content } = getQueryParamsForComposer(uri);
+    console.log(openEditor, courseTag, lessonTag, content);
   if (openEditor && lessonTag && courseTag) {
     api.modifyClass("model:composer", {
       open(opts) {
