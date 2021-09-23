@@ -5,7 +5,7 @@ const overrideText = () => {
 };
 
 export default {
-  name: "composer-initializer",
+  name: "text-initializer",
   initialize() {
     overrideText();
   },
