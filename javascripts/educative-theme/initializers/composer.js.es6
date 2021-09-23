@@ -8,7 +8,7 @@ const getComposerContent = (urlQueryParams) => {
   let content = '';
 
   if (authorId && collectionId) {
-    content = `\n\n\n\n[CourseLink](${educativeUrl}/collection/${authorId}/${collectionId})\n`;
+    content = `\n\n\n-------------------- Type question above this line.\n[CourseLink](${educativeUrl}/collection/${authorId}/${collectionId})\n`;
     if (pageId) {
       content = `${content}[LessonLink](${educativeUrl}/collection/page/${authorId}/${collectionId}/${pageId})\n`;
     }
