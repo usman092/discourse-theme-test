@@ -74,7 +74,7 @@ const initializeCreateTopic = (api) => {
           const { openEditor, courseTag, lessonTag, content } = getQueryParamsForComposer(getUri());
           console.log(uri);
           if (content && content != '') {
-            this.reply = "Hello World";
+            this.reply = `${this.reply}\n\n${content}`;
             console.log("modified content");
           }
 
