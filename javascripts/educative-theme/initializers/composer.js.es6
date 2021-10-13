@@ -70,8 +70,13 @@ const initializeCreateTopic = (api) => {
       api.modifyClass("model:composer", {
         save() {
           const uri = document?.documentURI ?? window?.location?.href;
+          const { openEditor, courseTag, lessonTag, content } = getQueryParamsForComposer(uri);
           console.log(uri);
-          this.reply = "Hello World";
+          if (content && content != '') {
+            this.reply = "Hello World";
+            console.log("modified content");
+          }
+
           console.log("End of save");
           return this._super(...arguments);
       },
