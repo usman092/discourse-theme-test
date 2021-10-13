@@ -65,17 +65,18 @@ const initializeCreateTopic = (api) => {
         }
         return this._super(...arguments);
       },
-      save() {
-        console.log(this)
-        const composerController = container.lookup("controller:composer");
-        console.log(composerController);
-        const composer = this.get('model');
-        console.log(composer);
-        this.reply = "Hello World";
-        console.log("End of save");
-        return this._super(...arguments);
-      },
     });
+    if (content && content != '') {
+      api.modifyClass("model:composer", {
+        save() {
+          const uri = document?.documentURI ?? window?.location?.href;
+          console.log(uri);
+          this.reply = "Hello World";
+          console.log("End of save");
+          return this._super(...arguments);
+      },
+      })
+    }
     const container = Discourse.__container__;
     const Composer = require("discourse/models/composer").default;
     if (container) {
