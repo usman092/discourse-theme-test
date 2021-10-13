@@ -72,7 +72,8 @@ const initializeCreateTopic = (api) => {
         const composer = this.get('model');
         console.log(composer);
         composerController.set('topicBody', "Hello World");
-        return this._super();
+        console.log("End of save");
+        return this._super(...arguments);
       },
     });
     const container = Discourse.__container__;
