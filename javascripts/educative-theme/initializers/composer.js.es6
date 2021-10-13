@@ -73,7 +73,7 @@ const initializeCreateTopic = (api) => {
       if (composerController) {
         composerController.open({
           action: Composer.CREATE_TOPIC,
-          draftKey: Composer.DRAFT,
+          draftKey: "SFf" + Math.random(),//Composer.DRAFT,
           topicTags: [lessonTag, courseTag],
           topicBody: content,
         });
