@@ -1,7 +1,7 @@
 import { withPluginApi } from "discourse/lib/plugin-api";
 
 const getComposerContent = (urlQueryParams) => {
-  const educativeUrl = 'https://educative.io/collection';
+  const educativeUrl = 'https://www.educative.io/collection';
   const authorId = urlQueryParams.get('authorId');
   const collectionId = urlQueryParams.get('collectionId');
   const pageId = urlQueryParams.get('pageId');
