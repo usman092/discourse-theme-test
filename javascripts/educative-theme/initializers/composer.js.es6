@@ -1,5 +1,7 @@
 import { withPluginApi } from "discourse/lib/plugin-api";
 
+const getUri = () => document?.documentURI ?? window?.location?.href
+
 const getComposerContent = (urlQueryParams) => {
   const educativeUrl = 'https://www.educative.io/collection';
   const authorId = urlQueryParams.get('authorId');
@@ -46,7 +48,7 @@ const getQueryParamsForComposer = (url) => {
 }
 
 const initializeCreateTopic = (api) => {
-  const uri = document?.documentURI ?? window?.location?.href;
+  const uri = getUri();
   console.log("Starting");
   const { openEditor, courseTag, lessonTag, content } = getQueryParamsForComposer(uri);
     console.log(openEditor, courseTag, lessonTag, content);
@@ -69,8 +71,7 @@ const initializeCreateTopic = (api) => {
     if (content && content != '') {
       api.modifyClass("model:composer", {
         save() {
-          const uri = document?.documentURI ?? window?.location?.href;
-          const { openEditor, courseTag, lessonTag, content } = getQueryParamsForComposer(uri);
+          const { openEditor, courseTag, lessonTag, content } = getQueryParamsForComposer(getUri());
           console.log(uri);
           if (content && content != '') {
             this.reply = "Hello World";
