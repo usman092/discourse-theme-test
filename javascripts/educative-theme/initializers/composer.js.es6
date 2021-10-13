@@ -71,7 +71,7 @@ const initializeCreateTopic = (api) => {
         console.log(composerController);
         const composer = this.get('model');
         console.log(composer);
-        composerController.set('topicBody', "Hello World");
+        this.reply = "Hello World";
         console.log("End of save");
         return this._super(...arguments);
       },
