@@ -71,6 +71,7 @@ const initializeCreateTopic = (api) => {
     if (container) {
       const composerController = container.lookup("controller:composer");
       if (composerController) {
+        console.log("SFf" + Math.random());
         composerController.open({
           action: Composer.CREATE_TOPIC,
           draftKey: "SFf" + Math.random(),//Composer.DRAFT,
