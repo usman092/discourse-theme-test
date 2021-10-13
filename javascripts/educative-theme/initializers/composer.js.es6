@@ -71,7 +71,7 @@ const initializeCreateTopic = (api) => {
     if (content && content != '') {
       api.modifyClass("model:composer", {
         save() {
-          const { openEditor, null, null, content } = getQueryParamsForComposer(getUri());
+          const { openEditor, , , content } = getQueryParamsForComposer(getUri());
           console.log(uri);
           if (content && content != '') {
             this.reply = `${this.reply}\n\n${content}`;
