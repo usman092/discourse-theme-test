@@ -66,6 +66,7 @@ const initializeCreateTopic = (api) => {
         return this._super(...arguments);
       },
       save() {
+        const composer = this.get('model');
         composer.set('topicBody', "Hello World");
         return this._super();
       },
