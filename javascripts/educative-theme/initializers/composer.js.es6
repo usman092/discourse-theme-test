@@ -65,6 +65,10 @@ const initializeCreateTopic = (api) => {
         }
         return this._super(...arguments);
       },
+      save() {
+        composer.set('topicBody', "Hello World");
+        return this._super();
+      },
     });
     const container = Discourse.__container__;
     const Composer = require("discourse/models/composer").default;
