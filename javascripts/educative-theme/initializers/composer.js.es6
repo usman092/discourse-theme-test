@@ -71,7 +71,7 @@ const initializeCreateTopic = (api) => {
     if (content && content != '') {
       api.modifyClass("model:composer", {
         save() {
-          const { openEditor, courseTag, lessonTag, content } = getQueryParamsForComposer(getUri());
+          const { openEditor, null, null, content } = getQueryParamsForComposer(getUri());
           console.log(uri);
           if (content && content != '') {
             this.reply = `${this.reply}\n\n${content}`;
@@ -94,7 +94,6 @@ const initializeCreateTopic = (api) => {
           draftKey: Composer.DRAFT,
           skipDraftCheck: true,
           topicTags: [lessonTag, courseTag],
-          topicBody: content,
         });
       }
     }
